@@ -1,0 +1,164 @@
+.wrapLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+.wrapImg {
+    width: 50%;
+    height: 100vh;
+    background-image: url('./assets/bg-2.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    animation: nois 1s linear;
+}
+
+.degrade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(247, 254, 255, 0) 0%, rgba(9, 9, 9, 1) 100%);
+}
+
+.wrapForm {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.wrapForm form{
+    height: 300px;
+    width: 300px;
+    border: 2px solid var(--light);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: var(--light) 0px 5px 15px;
+    gap: 2vh;
+    animation: faderight 1s ease-in-out;
+}
+
+.wrapForm h2{
+    color: var(--light);
+    width: 100%;
+    text-shadow: var(--light) 0px 5px 15px;
+}
+
+.wrapForm input{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    border: 2px solid var(--light);
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.wrapForm input:focus{
+   outline: none;
+   outline: 1px solid var(--white)
+}
+
+.wrapForm input::placeholder{
+    color: var(--light);
+}
+
+.wrapForm button{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    background-color: var(--dark);
+    transition: all 200ms ease-in-out;
+    color: var(--light);
+    border: 2px solid var(--light);
+    font-weight: bold;
+}
+
+.wrapForm button:hover{
+    border: 2px solid transparent;
+    background-color: var(--light);
+    color: var(--white);
+    cursor: pointer;
+    box-shadow: var(--light) 0px 5px 15px;
+}
+
+.wrapForm .userCad{
+    color: var(--white);
+    opacity: 0.5;
+    font-size: 0.7rem;
+}
+
+.wrapForm .userCad:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+@keyframes faderight {
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@keyframes nois {
+    0%{
+       transform: translateX(-50px);
+       opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (width < 1000px){
+    .wrapImg{
+        display: none;
+    }
+    .degrade{
+        display: none;
+    }
+    .wrapLogin {
+        background-image: url('./assets/bg-2.jpeg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .wrapForm {
+        background-color: transparent;
+        width: 100%;
+    }
+    .wrapForm form{
+        background-color: var(--black);
+    }
+    
+}
+
+@media (width < 500px){
+    .wrapForm {
+        background-color: transparent;
+        width: 100%;
+    }
+    .wrapForm form{
+        background-color: var(--black);
+        height: 300px;
+        width: 90%;
+    }
+}
