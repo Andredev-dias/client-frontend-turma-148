@@ -15,7 +15,7 @@ function App() {
     const storedUser = localStorage.getItem('user')
     if (storedUser) {
       setUser(JSON.parse(storedUser))
-      navigate('/usersList')
+      navigate('/dashboard')
     }
   }, [navigate])
 
@@ -29,7 +29,7 @@ function App() {
 
       localStorage.setItem('user', JSON.stringify(user))
       setUser(user)
-      navigate('/usersList')
+      navigate('/dashboard')
     } catch (error) {
       setMessage('Erro no login: ' + (error.response?.data?.message || 'Verifique os dados'))
     }
@@ -47,7 +47,7 @@ function App() {
           <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
           <input type="password" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type='submit'>Entrar</button>
-          <p className={style.userCad}>Cadastrar usuário</p>
+          <p className={style.userCad}>Entre em contato</p>
           <p>{message}</p>
         </form>
       </div>

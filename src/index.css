@@ -1,5 +1,5 @@
 :root {
-  --dark: #150e37;
+  --dark: #1d1449;
   --light: #674de9;
   --white: #f0f8ff;
   --black: #090909;
@@ -14,4 +14,9 @@
 
 body{
   background-color: var(--black);
+  color: var(--white);
+}
+
+section{
+  display: flex;
 }
