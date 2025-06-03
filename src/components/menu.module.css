@@ -1,5 +1,6 @@
 /* menu aberto */
 .navBar{
+    transition: all 1s ease-in-out;
     background-color: var(--dark);
     min-width: 240px;
     height: 100vh;
@@ -51,6 +52,7 @@
 /* menu fechado */
 
 .navBarClosed {
+    transition: all 1s ease-in-out;
     background-color: var(--dark);
     width: auto;
     height: 100vh;

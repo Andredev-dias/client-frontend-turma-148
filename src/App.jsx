@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 import Icon from './assets/icons8-circled-right.gif'
 import IconLogin from './assets/icons8-crachá.gif'
+import Eye from './assets/icons8-visível.gif'
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const [message, setMessage] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user')
@@ -57,7 +60,8 @@ function App() {
           </div>
           <div style={{position: "relative", width: "100%"}}>
             <img className={style.icon} src={Icon} alt="Icone arrow" />
-            <input type="password" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input type={showPassword ? 'text' : 'password'} placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <img onClick={() => setShowPassword(prev => !prev)} style={{position: "absolute", width: '20px', borderRadius: '100%', right: '10px', top: '10px', cursor: 'pointer'}} src={Eye} alt="Olho da senha" />
           </div>
           <button type='submit'>Entrar</button>
           <p className={style.userCad}>Entre em contato</p>
