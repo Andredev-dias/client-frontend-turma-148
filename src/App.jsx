@@ -3,6 +3,10 @@ import { api } from './api/api'
 import { useNavigate } from 'react-router'
 import { useState, useEffect } from 'react';
 
+import Icon from './assets/icons8-circled-right.gif'
+import IconLogin from './assets/icons8-crachá.gif'
+
+
 function App() {
   const navigate = useNavigate();
 
@@ -43,9 +47,18 @@ function App() {
       </div>
       <div className={style.wrapForm}>
         <form onSubmit={handleLogin}>
+          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+          <img className={style.iconLogin} src={IconLogin} alt="Icone arrow" />
           <h2>Login</h2>
-          <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <input type="password" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
+          <div style={{position: "relative", width: "100%"}}>
+            <img className={style.icon} src={Icon} alt="Icone arrow" />
+            <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </div>
+          <div style={{position: "relative", width: "100%"}}>
+            <img className={style.icon} src={Icon} alt="Icone arrow" />
+            <input type="password" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </div>
           <button type='submit'>Entrar</button>
           <p className={style.userCad}>Entre em contato</p>
           <p>{message}</p>
